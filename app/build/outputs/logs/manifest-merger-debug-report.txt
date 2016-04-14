@@ -60,18 +60,20 @@ category#android.intent.category.LAUNCHER
 ADDED from C:\Users\japyg\AndroidStudioProjects\Omok2\app\src\main\AndroidManifest.xml:18:17-77
 	android:name
 		ADDED from C:\Users\japyg\AndroidStudioProjects\Omok2\app\src\main\AndroidManifest.xml:18:27-74
-activity#edu.utep.cs.cs4330cs.hw4.omok.Game
-ADDED from C:\Users\japyg\AndroidStudioProjects\Omok2\app\src\main\AndroidManifest.xml:22:9-28:20
+activity#edu.utep.cs.cs4330cs.hw4.omok.HumanVsHuman
+ADDED from C:\Users\japyg\AndroidStudioProjects\Omok2\app\src\main\AndroidManifest.xml:21:9-24:57
 	android:label
-		ADDED from C:\Users\japyg\AndroidStudioProjects\Omok2\app\src\main\AndroidManifest.xml:24:13-33
+		ADDED from C:\Users\japyg\AndroidStudioProjects\Omok2\app\src\main\AndroidManifest.xml:23:13-45
+	android:parentActivityName
+		ADDED from C:\Users\japyg\AndroidStudioProjects\Omok2\app\src\main\AndroidManifest.xml:24:13-55
 	android:name
-		ADDED from C:\Users\japyg\AndroidStudioProjects\Omok2\app\src\main\AndroidManifest.xml:23:13-33
+		ADDED from C:\Users\japyg\AndroidStudioProjects\Omok2\app\src\main\AndroidManifest.xml:22:13-41
 meta-data#android.support.PARENT_ACTIVITY
-ADDED from C:\Users\japyg\AndroidStudioProjects\Omok2\app\src\main\AndroidManifest.xml:25:13-27:48
+ADDED from C:\Users\japyg\AndroidStudioProjects\Omok2\app\src\main\AndroidManifest.xml:26:13-28:49
 	android:name
-		ADDED from C:\Users\japyg\AndroidStudioProjects\Omok2\app\src\main\AndroidManifest.xml:26:17-63
+		ADDED from C:\Users\japyg\AndroidStudioProjects\Omok2\app\src\main\AndroidManifest.xml:27:17-63
 	android:value
-		ADDED from C:\Users\japyg\AndroidStudioProjects\Omok2\app\src\main\AndroidManifest.xml:27:17-46
+		ADDED from C:\Users\japyg\AndroidStudioProjects\Omok2\app\src\main\AndroidManifest.xml:28:17-46
 uses-sdk
 INJECTED from C:\Users\japyg\AndroidStudioProjects\Omok2\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 MERGED from [com.android.support:appcompat-v7:23.2.1] C:\Users\japyg\AndroidStudioProjects\Omok2\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.2.1\AndroidManifest.xml:21:5-23:78

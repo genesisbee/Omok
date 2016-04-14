@@ -12,55 +12,51 @@ import android.content.Intent;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
 /** Test the BoardView class. */
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements Game_Mode_Fragment.GameModeListener {
     //Declaring listeners to the UI components
     Button human;
     Button comp;
-    Intent intent = new Intent();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.play_type);
-        //play type UI components referenced
-        mainMenuSetUp();
-    }
-
-    //Game_Mode_Fragment interface
-    public void setMode(int level){
-        intent = new Intent(getApplicationContext(),Game.class);
-        intent.putExtra("mode",level);
-        startActivity(intent);
-    }
-    public void run(){
-
-    }
-    //Main menu button listeners
-    public void mainMenuSetUp() {
+        //Reference Main Menu UI components
+        //Set Main menu button listeners
         human = (Button) findViewById(R.id.humanButton);
-        human.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-               setMode(0);
-            }
-        });
+            human.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent a = new Intent();
+                    a = new Intent(getApplicationContext(), HumanVsHuman.class);
+                    startActivity(a);
+                }
+            });
 
         comp = (Button) findViewById(R.id.compButton);
-        comp.setOnClickListener(new View.OnClickListener(){
-            @Override
-                    public void onClick(View v){
-                //Dynamically display GameMode fragment
-                FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-                //Replace the contents of the container with the new fragment
-                ft.replace(R.id.placeholder,new Game_Mode_Fragment());
-                //Complete the changes added above
-                ft.commit();
-            }
-        });
+            comp.setOnClickListener(new View.OnClickListener(){
+                @Override
+                public void onClick(View v){
+                    //Dynamically display GameMode fragment
+                    FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+                    //Replace the contents of the container with the new fragment
+                    ft.replace(R.id.placeholder,new Game_Mode_Fragment());
+                    //Complete the changes added above
+                    ft.commit();
+                }
+            });
+        }
+
+    //Called when user has selected a computer mode
+    public void setMode(int level) {
+        Intent b = new Intent();
+        b = new Intent(getApplicationContext(), HumanVsComputer.class);
+        b.putExtra("mode",level);
+        startActivity(b);
     }
+
 }

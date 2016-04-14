@@ -11,19 +11,23 @@ public class Game_Mode_Fragment extends Fragment {
     Button random;
     Button smart;
 
-    //Callbacks to the activity, used to share events with MainActivity
-    private gameModeListener listener;
-    public interface gameModeListener{
+    //Interface listener
+    private GameModeListener listener;
+
+    //Events Game_Mode_Fragment will need
+    // to talk to MainActivity for.
+    public interface GameModeListener{
         void setMode(int level);
     }
 
     @Override
     public void onAttach(Context context){
         super.onAttach(context);
-        if(context instanceof gameModeListener){
-            listener =(gameModeListener) context;
+        try {
+                if(context instanceof GameModeListener)
+                listener = (GameModeListener) context;
         }
-        else{
+        catch (Exception e){
             throw new ClassCastException(context.toString()+
                     "must implment MyListFragment.gameModeListener");
         }
@@ -42,7 +46,7 @@ public class Game_Mode_Fragment extends Fragment {
             @Override
             public void onClick(View v) {
                 //Call random strategy
-                listener.setMode(1);
+                listener.setMode(0);
             }
         });
 
@@ -50,7 +54,7 @@ public class Game_Mode_Fragment extends Fragment {
             @Override
             public void onClick(View v) {
                 // /Call smart strategy
-                listener.setMode(2);
+                listener.setMode(1);
             }
         });
     }
