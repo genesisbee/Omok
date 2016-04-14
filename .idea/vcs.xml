@@ -4,5 +4,6 @@
     <mapping directory="" vcs="Git" />
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
     <mapping directory="$USER_HOME$/Documents/GitHub/Omok" vcs="Git" />
+    <mapping directory="C:\Users\japyg\AndroidStudioProjects\Omok2\Omok" vcs="Git" />
   </component>
 </project>

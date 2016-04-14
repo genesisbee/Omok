@@ -13,13 +13,26 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public abstract class Player extends AppCompatActivity{
-    //Declaring boardGame UI components
-    public Board board;
-    public Button resetButton;
-    public BoardView boardView;
+public class Player{
+    Board board = new Board();
+    String playerName;
+    String stoneColor;
+    String playerMark;
+    int Score =0;
 
-    /*All players are able to set a stone to the Omok Game Board
-     */
-    public void setStone(){}
+    Player(String name, String color, String mark){
+        playerName= name;
+        stoneColor = color;
+        playerMark = mark;
+    }
+
+    public static int getScore(Player p){
+        return 1;
+    }
+
+    private String getPlayerMark(){return playerMark;}
+    private String getPlayerName(){return playerName;}
+    private String getStoneColor(){return stoneColor;}
+
+
 }

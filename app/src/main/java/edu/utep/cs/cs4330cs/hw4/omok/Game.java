@@ -15,6 +15,7 @@ import android.widget.Toast;
 public class Game extends AppCompatActivity {
     Board boardGame = new Board();
     BoardView boardView;
+    Board board = new Board();
     TextView currentPlayer;
     Player player1;
     Player player2;
@@ -40,14 +41,13 @@ public class Game extends AppCompatActivity {
     public void startGame() {
         //STEP 2.)If no winner or draw has been announced
         if(!boardGame.foundWinner()) {
-
             //STEP 3.)Current player set stone on board
                 //a.)player 1 turns
                 //b.)player 2 turn
 
             //STEP 4.)Check results
             //a.)Check if there is a winner at last placed stone
-            if (boardGame.winner(x, y, boardGame.getPlayerTurn())) {
+        //    if (boardGame.winner(x, y, boardGame.getPlayerTurn())) {
                 String winner = boardGame.getPlayerName();
 
                 //Display the text for the winning player

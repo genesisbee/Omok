@@ -7,7 +7,6 @@ package edu.utep.cs.cs4330cs.hw4.omok;
 *@authors Juan Razo and Genesis Bejarano
 **/
 public class Place {
-
     private String player;
     private boolean taken;
 
