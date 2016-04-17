@@ -1,4 +1,0 @@
-CHANGED,C:\Users\japyg\AndroidStudioProjects\Omok2\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\edu\utep\cs\cs4330cs\hw4\omok\MainActivity$1$override.class
-CHANGED,C:\Users\japyg\AndroidStudioProjects\Omok2\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\edu\utep\cs\cs4330cs\hw4\omok\MainActivity$2$override.class
-CHANGED,C:\Users\japyg\AndroidStudioProjects\Omok2\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\android\tools\fd\runtime\AppPatchesLoaderImpl.class
-CHANGED,C:\Users\japyg\AndroidStudioProjects\Omok2\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\edu\utep\cs\cs4330cs\hw4\omok\MainActivity$override.class

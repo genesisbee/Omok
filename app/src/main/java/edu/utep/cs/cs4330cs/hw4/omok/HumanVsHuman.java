@@ -24,7 +24,6 @@ public class HumanVsHuman extends AppCompatActivity {
         currentPlayer = (TextView) findViewById(R.id.current_player);
         boardView = (BoardView) findViewById(R.id.boardView);
         resetButton = (Button) findViewById(R.id.reset);
-        resetButton.setEnabled(true);
         startGame();
     }
 

@@ -7,7 +7,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class HumanVsComputer extends AppCompatActivity {
-    int gameMode;
+    int gameMode; // 0 is random | 1 is smart.
     public Board board = new Board();
     public Button resetButton;
     public BoardView boardView;
@@ -19,13 +19,12 @@ public class HumanVsComputer extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Bundle extra = getIntent().getExtras();
         gameMode = extra.getInt("mode");
-
         //REFERENCE UI COMPONENTS
         currentPlayer = (TextView) findViewById(R.id.current_player);
         boardView = (BoardView) findViewById(R.id.boardView);
         resetButton = (Button) findViewById(R.id.reset);
-        resetButton.setEnabled(true);
-
     }
+
+
 }
 
