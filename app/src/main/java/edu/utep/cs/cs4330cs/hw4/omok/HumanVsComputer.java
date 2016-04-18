@@ -119,7 +119,6 @@ public class HumanVsComputer extends AppCompatActivity {
         //COMPUTER TURN
         //select a stone based on the computers strategy
         if (!foundWinner()){
-            Log.d("Hey im here yay its"," the computers turn!");
             Coordinates coor = generateCoordinates();
             int x = coor.getX();
             int y = coor.getY();
@@ -136,18 +135,12 @@ public class HumanVsComputer extends AppCompatActivity {
                     //increasePlayerScore
                     //board.increaseScore(board.getPlayerName());
                 }
-                else if (board.gameDraw()) {
-                    displayDraw();
-                }
-                else {
-                    updateGame();
+                else if (board.gameDraw())displayDraw();
 
-                }
+                else updateGame();
             }
-            else{
-                Log.d("Aw man","didnt place the stone!");
-            }
-            startGame();
+            else Log.d("Aw man","didnt place the stone!");
+
         }
     }
 }
