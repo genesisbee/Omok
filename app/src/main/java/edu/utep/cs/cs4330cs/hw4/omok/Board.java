@@ -109,7 +109,15 @@ public class Board {
         }
         return draw;
     }
-
+    public void print(){
+        for(int i=0; i<10; i++){
+            for(int j=0; j<10; j++){
+                Place a = board[i][j];
+                String b = a.getPlayer();
+                Log.d("|",b);
+            }
+        }
+    }
     /*
     * foundWinner method gets the value of winner
     * @return boolean winner

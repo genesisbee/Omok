@@ -10,7 +10,7 @@ public class RandomCoordinates {
             coor.setX(rand.nextInt(10));
             coor.setY(rand.nextInt(10));
 
-            while(!board.setStone(coor.getX(), coor.getY(), board.getPlayerName())){
+            while(!board.setStone(coor.getX(), coor.getY(), board.getPlayerTurn())){
                 coor.setX(rand.nextInt(10));
                 coor.setY(rand.nextInt(10));
             }

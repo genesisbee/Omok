@@ -25,6 +25,7 @@ public class HumanVsComputer extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Bundle extra = getIntent().getExtras();
         gameMode = extra.getInt("mode");
+
             //REFERENCE UI COMPONENTS
         currentPlayer = (TextView) findViewById(R.id.current_player);
         boardView = (BoardView) findViewById(R.id.boardView);
@@ -43,17 +44,13 @@ public class HumanVsComputer extends AppCompatActivity {
           int y = coor.getY();
           Log.d("Computer Mode x ", Integer.toString(x));
           Log.d("Computer Mode y ",Integer.toString(y));
-              //Check if there is a winner at the last stone placed
-//              if (winner(x, y)) {
-//                  winner = board.getPlayerName();
-//                  // display the text for the winning player
-//                  displayWinner();
-                  //increasePlayerScore
-                  //board.increaseScore(board.getPlayerName());
+          board.flipTurn();
+          //Update the next players turn
+          currentPlayer.setText(board.getPlayerName());
+          board.print();
+          //update the view based on the new board
+          boardView.currentBoard(board.getPlace());
       }
-              else if (board.gameDraw())displayDraw();
-              else updateGame();
-     // }
   }
 
 
@@ -91,12 +88,10 @@ public class HumanVsComputer extends AppCompatActivity {
 
     public boolean setStone(int x, int y){return board.setStone(x,y,board.getPlayerTurn());}
 
-    public void updateGame(){
+    public void playerSwitch(){
         board.flipTurn();
         //Update the next players turn
         currentPlayer.setText(board.getPlayerName());
-        //update the view based on the new board
-        boardView.currentBoard(board.getPlace());
     }
 
 
