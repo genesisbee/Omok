@@ -36,7 +36,6 @@ public class Board {
      @return false, otherwise
      */
     public boolean setStone(int x, int y, String player){
-        Log.d("Setting the stone", ":)");
         if(!board[x][y].isTaken()){
             board[x][y].setPlace(player, true);
             return true;

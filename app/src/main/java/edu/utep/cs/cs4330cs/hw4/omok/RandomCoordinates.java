@@ -1,4 +1,5 @@
 package edu.utep.cs.cs4330cs.hw4.omok;
+import android.util.Log;
 import java.util.Random;
 public class RandomCoordinates {
     private Coordinates coor;

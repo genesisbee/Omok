@@ -31,60 +31,43 @@ public class HumanVsComputer extends AppCompatActivity {
     }
 
   public void startGame() {
-      //HUMANS TURN
-      //Add listener to boardView
-      boardView.addBoardTouchListener(new BoardView.BoardTouchListener() {
-          @Override
-          public void onTouch(int x, int y) {
-              Log.d("Human Mode x: ", Integer.toString(x));
-              Log.d("Human Mode y: ",Integer.toString(y));
-              //Continue placing stones while there is no winner
-              if (!foundWinner()) {
-
-                  //Check if a stone can be placed at the current X & Y touched
-                  if (setStone(x, y)) {
-                      //Check if there is a winner at the last stone placed
-                      if (winner(x, y)) {
-                          winner = board.getPlayerName();
-                          // display the text for the winning player
-                          displayWinner();
-                          //increasePlayerScore
-                          //board.increaseScore(board.getPlayerName());
-                      }
-                      else if (board.gameDraw()) {
-                          displayDraw();
-                      }
-                      else updateGame();
-                      computerMove();
-                  }
-
-                  //For invaded user moves
-                  else {
-                      Toast.makeText(getApplicationContext(), "Invaild move try again", Toast.LENGTH_SHORT).show();
-                  }
-              }
-          }
-      });
-
+      Log.d("COMPUTER: ",board.getPlayerName());
+      //COMPUTER TURN
+      //select a stone based on the computers strategy
+      if (!foundWinner()){
+          //Check if a stone can be placed at the current X & Y touched
+          Coordinates coor = generateCoordinates();
+          int x = coor.getX();
+          int y = coor.getY();
+          Log.d("Computer Mode x ", Integer.toString(x));
+          Log.d("Computer Mode y ",Integer.toString(y));
+              //Check if there is a winner at the last stone placed
+//              if (winner(x, y)) {
+//                  winner = board.getPlayerName();
+//                  // display the text for the winning player
+//                  displayWinner();
+                  //increasePlayerScore
+                  //board.increaseScore(board.getPlayerName());
+      }
+              else if (board.gameDraw())displayDraw();
+              else updateGame();
+     // }
   }
+
+
 
 //-----------------------METHODS--------------------------------------
     //computer methods----
     public Coordinates generateCoordinates() {
         if (gameMode == 0) {
-            Log.d("Game mode is ","random");
             RandomCoordinates random = new RandomCoordinates();
             return random.placeToken(board);
         }
         else{
-            Log.d("What are","you doing here ;/");
             Smart s = new Smart();
-
             return null;
         }
     }
-
-
 
     //--------------------------game methods---
 
@@ -114,34 +97,8 @@ public class HumanVsComputer extends AppCompatActivity {
         boardView.currentBoard(board.getPlace());
     }
 
-
     public void computerMove(){
-        //COMPUTER TURN
-        //select a stone based on the computers strategy
-        if (!foundWinner()){
-            Coordinates coor = generateCoordinates();
-            int x = coor.getX();
-            int y = coor.getY();
-            Log.d("Computer Mode x: ", Integer.toString(x));
-            Log.d("Computer Mode y: ",Integer.toString(y));
-            //Check if a stone can be placed at the current X & Y touched
-            if (setStone(x, y)) {
-                Log.d("Computer mode set ", "the stone!");
-                //Check if there is a winner at the last stone placed
-                if (winner(x, y)) {
-                    winner = board.getPlayerName();
-                    // display the text for the winning player
-                    displayWinner();
-                    //increasePlayerScore
-                    //board.increaseScore(board.getPlayerName());
-                }
-                else if (board.gameDraw())displayDraw();
 
-                else updateGame();
-            }
-            else Log.d("Aw man","didnt place the stone!");
-
-        }
     }
 }
 
