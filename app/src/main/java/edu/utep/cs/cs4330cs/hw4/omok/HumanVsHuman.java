@@ -15,7 +15,6 @@ public class HumanVsHuman extends AppCompatActivity {
     public Button resetButton;
     public BoardView boardView;
     TextView currentPlayer;
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,45 +29,41 @@ public class HumanVsHuman extends AppCompatActivity {
     public void startGame() {
         //Add listener to boardView
         boardView.addBoardTouchListener(new BoardView.BoardTouchListener() {
-
             @Override
             public void onTouch(int x, int y) {
-                    //Continue placing stones while there is no winner
-                    if (!board.foundWinner()) {
+                if (!board.foundWinner()) {
+                    //Check if a stone can be placed at the current X & Y touched
+                    if (board.setStone(x, y, board.getPlayerTurn())) {
 
-                        //Check if a stone can be placed at the current X & Y touched
-                        if (board.setStone(x, y, board.getPlayerTurn())) {
+                        //Check if there is a winner at the last stone placed
+                        if (board.winner(x, y, board.getPlayerTurn())) {
+                            String winner = board.getPlayerName();
 
-                            //Check if there is a winner at the last stone placed
-                            if (board.winner(x, y, board.getPlayerTurn())) {
-                                String winner = board.getPlayerName();
-                                Log.d("Winner", winner);
-
-                                // display the text for the winning player
-                                Toast.makeText(getApplicationContext(), "Player " + winner +
-                                        " has won!", Toast.LENGTH_LONG).show();
-                                board.increaseScore(board.getPlayerName());
-                            }
-                            //Check for a draw and display the message
-                            else if (board.gameDraw()) {
-                                Toast.makeText(getApplicationContext(), "Draw",
-                                        Toast.LENGTH_SHORT).show();
-                            }
-                            //If there is no winner flip the player
-                            else {
-                                board.flipTurn();
-                                //Update the next players turn
-                                currentPlayer.setText(board.getPlayerName());
-                                //update the view based on the new board
-                                boardView.currentBoard(board.getPlace());
-                            }
+                            // display the text for the winning player
+                            Toast.makeText(getApplicationContext(), "Player " + winner +
+                                    " has won!", Toast.LENGTH_LONG).show();
+                            board.increaseScore(board.getPlayerName());
+                        }
+                        //Check for a draw and display the message
+                        else if (board.gameDraw()) {
+                            Toast.makeText(getApplicationContext(), "Draw",
+                                    Toast.LENGTH_SHORT).show();
+                        }
+                        //If there is no winner flip the player
+                        else {
+                            board.flipTurn();
+                            //Update the next players turn
+                            currentPlayer.setText(board.getPlayerName());
+                            //update the view based on the new board
+                            boardView.currentBoard(board.getPlace());
                         }
                     }
-                }});
+                }
+            }
+        });
     }
 
-
-    /*
+   /*
     * Method to confirm a new game when the button New Game is touched
     * This will clear the text where the last winner was displayed and
     * clear the current board as well update the view based on the new board*/

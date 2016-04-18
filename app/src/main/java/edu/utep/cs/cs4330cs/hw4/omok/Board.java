@@ -1,5 +1,7 @@
 package edu.utep.cs.cs4330cs.hw4.omok;
 
+import android.util.Log;
+
 /**Board class is represented as the model in our Omok
  *applicaiton by contianing all of the Omok's boardgame
  *information. This class initalizes and updates the board which
@@ -34,6 +36,7 @@ public class Board {
      @return false, otherwise
      */
     public boolean setStone(int x, int y, String player){
+        Log.d("Setting the stone", ":)");
         if(!board[x][y].isTaken()){
             board[x][y].setPlace(player, true);
             return true;

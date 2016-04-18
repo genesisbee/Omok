@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\japyg\AndroidStudioProjects\Omok2\app\src\main\AndroidManifest.xml:2:1-31:12
+ADDED from C:\Users\japyg\AndroidStudioProjects\Omok2\app\src\main\AndroidManifest.xml:2:1-39:12
 	xmlns:android
 		ADDED from C:\Users\japyg\AndroidStudioProjects\Omok2\app\src\main\AndroidManifest.xml:2:11-69
 	package
@@ -14,7 +14,7 @@ ADDED from C:\Users\japyg\AndroidStudioProjects\Omok2\app\src\main\AndroidManife
 		INJECTED from C:\Users\japyg\AndroidStudioProjects\Omok2\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\japyg\AndroidStudioProjects\Omok2\app\src\main\AndroidManifest.xml
 application
-ADDED from C:\Users\japyg\AndroidStudioProjects\Omok2\app\src\main\AndroidManifest.xml:5:5-29:19
+ADDED from C:\Users\japyg\AndroidStudioProjects\Omok2\app\src\main\AndroidManifest.xml:5:5-37:19
 MERGED from [com.android.support:appcompat-v7:23.2.1] C:\Users\japyg\AndroidStudioProjects\Omok2\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.2.1\AndroidManifest.xml:25:5-20
 MERGED from [com.android.support:support-v4:23.2.1] C:\Users\japyg\AndroidStudioProjects\Omok2\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.2.1\AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:animated-vector-drawable:23.2.1] C:\Users\japyg\AndroidStudioProjects\Omok2\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\23.2.1\AndroidManifest.xml:7:5-20
@@ -74,6 +74,14 @@ ADDED from C:\Users\japyg\AndroidStudioProjects\Omok2\app\src\main\AndroidManife
 		ADDED from C:\Users\japyg\AndroidStudioProjects\Omok2\app\src\main\AndroidManifest.xml:27:17-63
 	android:value
 		ADDED from C:\Users\japyg\AndroidStudioProjects\Omok2\app\src\main\AndroidManifest.xml:28:17-46
+activity#edu.utep.cs.cs4330cs.hw4.omok.HumanVsComputer
+ADDED from C:\Users\japyg\AndroidStudioProjects\Omok2\app\src\main\AndroidManifest.xml:29:9-32:57
+	android:label
+		ADDED from C:\Users\japyg\AndroidStudioProjects\Omok2\app\src\main\AndroidManifest.xml:31:13-45
+	android:parentActivityName
+		ADDED from C:\Users\japyg\AndroidStudioProjects\Omok2\app\src\main\AndroidManifest.xml:32:13-55
+	android:name
+		ADDED from C:\Users\japyg\AndroidStudioProjects\Omok2\app\src\main\AndroidManifest.xml:30:13-44
 uses-sdk
 INJECTED from C:\Users\japyg\AndroidStudioProjects\Omok2\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 MERGED from [com.android.support:appcompat-v7:23.2.1] C:\Users\japyg\AndroidStudioProjects\Omok2\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.2.1\AndroidManifest.xml:21:5-23:78
