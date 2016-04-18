@@ -55,6 +55,7 @@ public class HumanVsComputer extends AppCompatActivity {
                           displayDraw();
                       }
                       else updateGame();
+                      computerMove();
                   }
 
                   //For invaded user moves
@@ -64,7 +65,7 @@ public class HumanVsComputer extends AppCompatActivity {
               }
           }
       });
-      computerMove();
+
   }
 
 //-----------------------METHODS--------------------------------------
@@ -140,13 +141,13 @@ public class HumanVsComputer extends AppCompatActivity {
                 }
                 else {
                     updateGame();
-                    startGame();
+
                 }
             }
             else{
                 Log.d("Aw man","didnt place the stone!");
             }
-
+            startGame();
         }
     }
 }
