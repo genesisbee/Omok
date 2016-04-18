@@ -1,9 +1,11 @@
 package edu.utep.cs.cs4330cs.hw4.omok;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.annotation.IntDef;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -97,7 +99,32 @@ public class HumanVsComputer extends AppCompatActivity {
         boardView.currentBoard(board.getPlace());
     }
 
-    public void computerMove(){
+
+    /*
+     * Method to confirm a new game when the button New Game is touched
+     * This will clear the text where the last winner was displayed and
+     * clear the current board as well update the view based on the new board*/
+    public void resetButton(View view) {
+        android.support.v7.app.AlertDialog.Builder alertDialogBuilder = new android.support.v7.app.AlertDialog.Builder(this);
+        alertDialogBuilder.setMessage("Would you like to start a new Game");
+
+        alertDialogBuilder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface arg0, int arg1) {
+                board.eraseBoard();
+                boardView.currentBoard(board.getPlace());
+            }
+        });
+
+        alertDialogBuilder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
+
+        android.support.v7.app.AlertDialog alertDialog = alertDialogBuilder.create();
+        alertDialog.show();
 
     }
 }
