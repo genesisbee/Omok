@@ -1,6 +1,10 @@
 package edu.utep.cs.cs4330cs.hw4.omok;
 
 import android.content.DialogInterface;
+import android.media.AudioAttributes;
+import android.media.AudioManager;
+import android.media.SoundPool;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -15,6 +19,12 @@ public class HumanVsHuman extends AppCompatActivity {
     public Button resetButton;
     public BoardView boardView;
     TextView currentPlayer;
+    //Sounds
+    SoundPool soundPool;
+    AudioAttributes aa;
+    int clickID;
+    boolean loaded = false;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,6 +33,24 @@ public class HumanVsHuman extends AppCompatActivity {
         currentPlayer = (TextView) findViewById(R.id.current_player);
         boardView = (BoardView) findViewById(R.id.boardView);
         resetButton = (Button) findViewById(R.id.reset);
+        //SOUNDS
+        //Set stone audio
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP){
+            aa= new AudioAttributes.Builder()
+                    .setContentType(AudioAttributes.CONTENT_TYPE_MUSIC)
+                    .setUsage(AudioAttributes.USAGE_GAME)
+                    .build();
+            soundPool = new SoundPool.Builder()
+                    .setMaxStreams(100)
+                    .setAudioAttributes(aa)
+                    .build();
+            clickID = soundPool.load(this, R.raw.click,1);
+        }
+        else{
+            soundPool = new SoundPool(100, AudioManager.STREAM_MUSIC,1);
+            clickID = soundPool.load(this, R.raw.click,1);
+        }
+
         startGame();
     }
 
@@ -34,7 +62,9 @@ public class HumanVsHuman extends AppCompatActivity {
                 if (!board.foundWinner()) {
                     //Check if a stone can be placed at the current X & Y touched
                     if (board.setStone(x, y, board.getPlayerTurn())) {
-
+                        //audio for setting the stone
+                        //Play set stone sound
+                        soundPool.play(clickID,1,1,1,0,2f);
                         //Check if there is a winner at the last stone placed
                         if (board.winner(x, y, board.getPlayerTurn())) {
                             String winner = board.getPlayerName();
