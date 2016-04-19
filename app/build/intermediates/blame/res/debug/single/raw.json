@@ -1,6 +1,14 @@
 [
     {
-        "merged": "C:\\Users\\japyg\\AndroidStudioProjects\\Omok2\\app\\build\\intermediates\\res\\merged\\debug\\raw\\click.wav",
-        "source": "C:\\Users\\japyg\\AndroidStudioProjects\\Omok2\\app\\src\\main\\res\\raw\\click.wav"
+        "merged": "C:\\Users\\japyg\\AndroidStudioProjects\\Omok2\\app\\build\\intermediates\\res\\merged\\debug\\raw\\lost.mp3",
+        "source": "C:\\Users\\japyg\\AndroidStudioProjects\\Omok2\\app\\src\\main\\res\\raw\\lost.mp3"
+    },
+    {
+        "merged": "C:\\Users\\japyg\\AndroidStudioProjects\\Omok2\\app\\build\\intermediates\\res\\merged\\debug\\raw\\click.mp3",
+        "source": "C:\\Users\\japyg\\AndroidStudioProjects\\Omok2\\app\\src\\main\\res\\raw\\click.mp3"
+    },
+    {
+        "merged": "C:\\Users\\japyg\\AndroidStudioProjects\\Omok2\\app\\build\\intermediates\\res\\merged\\debug\\raw\\winner.mp3",
+        "source": "C:\\Users\\japyg\\AndroidStudioProjects\\Omok2\\app\\src\\main\\res\\raw\\winner.mp3"
     }
 ]

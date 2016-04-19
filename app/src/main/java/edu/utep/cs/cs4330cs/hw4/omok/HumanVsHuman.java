@@ -23,6 +23,8 @@ public class HumanVsHuman extends AppCompatActivity {
     SoundPool soundPool;
     AudioAttributes aa;
     int clickID;
+    int winnerID;
+    int loserID;
     boolean loaded = false;
 
     @Override
@@ -45,10 +47,14 @@ public class HumanVsHuman extends AppCompatActivity {
                     .setAudioAttributes(aa)
                     .build();
             clickID = soundPool.load(this, R.raw.click,1);
+            winnerID = soundPool.load(this,R.raw.winner,2);
+            loserID= soundPool.load(this,R.raw.lost,3);
         }
         else{
             soundPool = new SoundPool(100, AudioManager.STREAM_MUSIC,1);
             clickID = soundPool.load(this, R.raw.click,1);
+            winnerID = soundPool.load(this,R.raw.winner,2);
+            loserID= soundPool.load(this,R.raw.lost,3);
         }
 
         startGame();
@@ -68,7 +74,8 @@ public class HumanVsHuman extends AppCompatActivity {
                         //Check if there is a winner at the last stone placed
                         if (board.winner(x, y, board.getPlayerTurn())) {
                             String winner = board.getPlayerName();
-
+                            //play winner audio
+                            soundPool.play(winnerID,1,1,1,0,1);
                             // display the text for the winning player
                             Toast.makeText(getApplicationContext(), "Player " + winner +
                                     " has won!", Toast.LENGTH_LONG).show();
@@ -76,6 +83,8 @@ public class HumanVsHuman extends AppCompatActivity {
                         }
                         //Check for a draw and display the message
                         else if (board.gameDraw()) {
+                            //play lost audio
+                            soundPool.play(loserID,1,1,1,0,1);
                             Toast.makeText(getApplicationContext(), "Draw",
                                     Toast.LENGTH_SHORT).show();
                         }
