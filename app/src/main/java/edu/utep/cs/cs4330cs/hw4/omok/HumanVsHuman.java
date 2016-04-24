@@ -7,7 +7,12 @@ import android.media.SoundPool;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.PopupMenu;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
+import android.view.SubMenu;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -37,8 +42,8 @@ public class HumanVsHuman extends AppCompatActivity {
         resetButton = (Button) findViewById(R.id.reset);
         //SOUNDS
         //Set stone audio
-        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP){
-            aa= new AudioAttributes.Builder()
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            aa = new AudioAttributes.Builder()
                     .setContentType(AudioAttributes.CONTENT_TYPE_MUSIC)
                     .setUsage(AudioAttributes.USAGE_GAME)
                     .build();
@@ -46,15 +51,14 @@ public class HumanVsHuman extends AppCompatActivity {
                     .setMaxStreams(100)
                     .setAudioAttributes(aa)
                     .build();
-            clickID = soundPool.load(this, R.raw.click,1);
-            winnerID = soundPool.load(this,R.raw.winner,2);
-            loserID= soundPool.load(this,R.raw.lost,3);
-        }
-        else{
-            soundPool = new SoundPool(100, AudioManager.STREAM_MUSIC,1);
-            clickID = soundPool.load(this, R.raw.click,1);
-            winnerID = soundPool.load(this,R.raw.winner,2);
-            loserID= soundPool.load(this,R.raw.lost,3);
+            clickID = soundPool.load(this, R.raw.click, 1);
+            winnerID = soundPool.load(this, R.raw.winner, 2);
+            loserID = soundPool.load(this, R.raw.lost, 3);
+        } else {
+            soundPool = new SoundPool(100, AudioManager.STREAM_MUSIC, 1);
+            clickID = soundPool.load(this, R.raw.click, 1);
+            winnerID = soundPool.load(this, R.raw.winner, 2);
+            loserID = soundPool.load(this, R.raw.lost, 3);
         }
 
         startGame();
@@ -70,12 +74,12 @@ public class HumanVsHuman extends AppCompatActivity {
                     if (board.setStone(x, y, board.getPlayerTurn())) {
                         //audio for setting the stone
                         //Play set stone sound
-                        soundPool.play(clickID,1,1,1,0,2f);
+                        soundPool.play(clickID, 1, 1, 1, 0, 2f);
                         //Check if there is a winner at the last stone placed
                         if (board.winner(x, y, board.getPlayerTurn())) {
                             String winner = board.getPlayerName();
                             //play winner audio
-                            soundPool.play(winnerID,1,1,1,0,1);
+                            soundPool.play(winnerID, 1, 1, 1, 0, 1);
                             // display the text for the winning player
                             Toast.makeText(getApplicationContext(), "Player " + winner +
                                     " has won!", Toast.LENGTH_LONG).show();
@@ -84,7 +88,7 @@ public class HumanVsHuman extends AppCompatActivity {
                         //Check for a draw and display the message
                         else if (board.gameDraw()) {
                             //play lost audio
-                            soundPool.play(loserID,1,1,1,0,1);
+                            soundPool.play(loserID, 1, 1, 1, 0, 1);
                             Toast.makeText(getApplicationContext(), "Draw",
                                     Toast.LENGTH_SHORT).show();
                         }
@@ -102,10 +106,10 @@ public class HumanVsHuman extends AppCompatActivity {
         });
     }
 
-   /*
-    * Method to confirm a new game when the button New Game is touched
-    * This will clear the text where the last winner was displayed and
-    * clear the current board as well update the view based on the new board*/
+    /*
+     * Method to confirm a new game when the button New Game is touched
+     * This will clear the text where the last winner was displayed and
+     * clear the current board as well update the view based on the new board*/
     public void resetButton(View view) {
         android.support.v7.app.AlertDialog.Builder alertDialogBuilder = new android.support.v7.app.AlertDialog.Builder(this);
         alertDialogBuilder.setMessage("Would you like to start a new Game");
@@ -128,5 +132,28 @@ public class HumanVsHuman extends AppCompatActivity {
         android.support.v7.app.AlertDialog alertDialog = alertDialogBuilder.create();
         alertDialog.show();
 
+    }
+
+    //Menu code
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        //Inflate the menu
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.my, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    //Customize
+    public boolean onOptionsItemSelected(MenuItem item) {
+        super.onOptionsItemSelected(item);
+        switch (item.getItemId()) {
+            //customize board
+            case R.id.customOptions: {
+             switch (){
+
+             }
+            }
+        }
+        return false;
     }
 }

@@ -8,6 +8,8 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
@@ -42,8 +44,20 @@ public class BoardView extends View {
      */
     private int boardSize = 10;
 
-    /** Board background color. */
-    private int boardColor = Color.rgb(230, 138, 0);
+    //Genesis Additional code to change stone color
+    private Color player1StoneColor;
+    private Color player2StroneColor;
+
+    /** Board background options */
+    public int boardColor = Color.rgb(230, 138, 0);
+  //  public ImageView boardImage;
+
+    /**Player custom options */
+    private Color playerOneColor;
+    private ImageView playerOneImage;
+
+    private Color playerTwoColor;
+    private ImageView playerTwoImage;
 
     /** Last place touched. Just for testing! */
     private float lastX = -1;
@@ -87,9 +101,10 @@ public class BoardView extends View {
         final float maxIndex = maxIndex();
         final float lineGap = lineGap();
         final Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
+        //set color
         paint.setColor(boardColor);
+        //draw board
         canvas.drawRect(0, 0, maxIndex, maxIndex, paint);
-        Log.d("maxIndex", String.valueOf(maxIndex));
         paint.setColor(Color.BLACK);
         for (int i = 0; i < numOfLines(); i++) {
             float index = i * lineGap;
@@ -103,16 +118,19 @@ public class BoardView extends View {
                 //Get the float value from X & Y position
                 lastX = (x + 1) * lineGap();
                 lastY = (y + 1) * lineGap();
+
                 //If a white player found paint a white stone
                 if(places[x][y].getPlayer().equals("W")) {
                     paint.setColor(Color.WHITE);
                     canvas.drawCircle(lastX, lastY, r, paint);
                 }
+
                 //If a black player fount paint a black stone
                 if(places[x][y].getPlayer().equals("B")){
                     paint.setColor(Color.BLACK);
                     canvas.drawCircle(lastX, lastY, r, paint);
                 }
+
                 //If a winner white player found paint the black inner circle
                 if(places[x][y].getPlayer().equals("w")){
                     paint.setColor(Color.WHITE);
@@ -120,6 +138,7 @@ public class BoardView extends View {
                     paint.setColor(Color.BLACK);
                     canvas.drawCircle(lastX, lastY, r / 2, paint);
                 }
+
                 //If a winner black player found paint the white inner circle
                 if(places[x][y].getPlayer().equals("b")){
                     paint.setColor(Color.BLACK);

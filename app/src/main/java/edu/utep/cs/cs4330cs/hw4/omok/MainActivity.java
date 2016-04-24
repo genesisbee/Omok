@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity implements Game_Mode_Fragmen
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.play_type);
+
         //Reference Main Menu UI components
         //Set Main menu button listeners
         human = (Button) findViewById(R.id.humanButton);

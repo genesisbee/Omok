@@ -10,6 +10,9 @@ import android.os.Bundle;
 import android.support.annotation.IntDef;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -204,5 +207,23 @@ public class HumanVsComputer extends AppCompatActivity {
         alertDialog.show();
 
     }
+    //Menu code
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu){
+        //Inflate the menu
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.my,menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+        int id = item.getItemId();
+        //code for items
+//        switch (id){
+//        }
+        return super.onOptionsItemSelected(item);
+    }
+
 }
 

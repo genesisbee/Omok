@@ -1,5 +1,9 @@
 [
     {
+        "merged": "C:\\Users\\japyg\\AndroidStudioProjects\\Omok2\\app\\build\\intermediates\\res\\merged\\debug\\menu\\my.xml",
+        "source": "C:\\Users\\japyg\\AndroidStudioProjects\\Omok2\\app\\src\\main\\res\\menu\\my.xml"
+    },
+    {
         "merged": "C:\\Users\\japyg\\AndroidStudioProjects\\Omok2\\app\\build\\intermediates\\res\\merged\\debug\\menu\\menu_main.xml",
         "source": "C:\\Users\\japyg\\AndroidStudioProjects\\Omok2\\app\\src\\main\\res\\menu\\menu_main.xml"
     }
