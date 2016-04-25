@@ -15,49 +15,6 @@
             <item
                 android:id="@+id/theme1"
                 android:title="@string/theme1"/>
-            <item
-                android:id="@+id/theme2"
-                android:title="@string/theme2"/>
-            <item
-                android:id="@+id/theme3"
-                android:title="@string/theme3"/>
         </menu>
     </item>
-
-    <item
-        android:id="@+id/musicOptions"
-        android:showAsAction="never"
-        android:title="@string/gameMusic">
-
-        <menu android:title="@string/gameMusic">
-        <item
-            android:id="@+id/on0"
-            android:title="@string/on"/>
-        <item
-            android:id="@+id/off0"
-            android:title="@string/off"/>
-        </menu>
-    </item>
-
-    <item
-        android:id="@+id/extraFreatures"
-        android:showAsAction="never"
-        android:title="@string/extraFeature">
-
-        <menu android:title="@string/extraFeature">
-            <item
-                android:id="@+id/on1"
-                android:title="@string/on"/>
-            <item
-                android:id="@+id/off1"
-                android:title="@string/off"/>
-        </menu>
-    </item>
-
-    <item
-        android:id="@+id/quit"
-        android:showAsAction="never"
-        android:title="@string/quit">
-    </item>
-
 </menu>

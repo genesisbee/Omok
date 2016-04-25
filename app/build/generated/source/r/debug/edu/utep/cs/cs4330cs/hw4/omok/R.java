@@ -2272,8 +2272,9 @@ containing a value of this type.
         public static final int design_fab_background=0x7f02004b;
         public static final int design_snackbar_background=0x7f02004c;
         public static final int gb1=0x7f02004d;
-        public static final int gb4=0x7f02004e;
-        public static final int notification_template_icon_bg=0x7f02004f;
+        public static final int luigi=0x7f02004e;
+        public static final int mario=0x7f02004f;
+        public static final int notification_template_icon_bg=0x7f020050;
     }
     public static final class id {
         public static final int action0=0x7f0d007a;
@@ -2331,7 +2332,6 @@ containing a value of this type.
         public static final int exitUntilCollapsed=0x7f0d0017;
         public static final int expand_activities_button=0x7f0d003e;
         public static final int expanded_menu=0x7f0d0051;
-        public static final int extraFreatures=0x7f0d0095;
         public static final int fill=0x7f0d002e;
         public static final int fill_horizontal=0x7f0d002f;
         public static final int fill_vertical=0x7f0d0022;
@@ -2356,15 +2356,10 @@ containing a value of this type.
         public static final int middle=0x7f0d0032;
         public static final int mini=0x7f0d0030;
         public static final int multiply=0x7f0d0027;
-        public static final int musicOptions=0x7f0d0092;
         public static final int navigation_header_container=0x7f0d0072;
         public static final int never=0x7f0d0036;
         public static final int none=0x7f0d0010;
         public static final int normal=0x7f0d000c;
-        public static final int off0=0x7f0d0094;
-        public static final int off1=0x7f0d0097;
-        public static final int on0=0x7f0d0093;
-        public static final int on1=0x7f0d0096;
         public static final int parallax=0x7f0d001b;
         public static final int parentPanel=0x7f0d0046;
         public static final int pin=0x7f0d001c;
@@ -2372,7 +2367,6 @@ containing a value of this type.
         public static final int player=0x7f0d006a;
         public static final int progress_circular=0x7f0d0006;
         public static final int progress_horizontal=0x7f0d0007;
-        public static final int quit=0x7f0d0098;
         public static final int radio=0x7f0d0054;
         public static final int reset=0x7f0d006d;
         public static final int right=0x7f0d0024;
@@ -2413,9 +2407,8 @@ containing a value of this type.
         public static final int text2=0x7f0d0082;
         public static final int textSpacerNoButtons=0x7f0d004d;
         public static final int textView2=0x7f0d0077;
-        public static final int theme1=0x7f0d008f;
-        public static final int theme2=0x7f0d0090;
-        public static final int theme3=0x7f0d0091;
+        public static final int theme=0x7f0d008f;
+        public static final int theme1=0x7f0d0090;
         public static final int time=0x7f0d0080;
         public static final int title=0x7f0d0043;
         public static final int title_template=0x7f0d0048;
@@ -2504,7 +2497,8 @@ containing a value of this type.
     public static final class raw {
         public static final int click=0x7f060000;
         public static final int lost=0x7f060001;
-        public static final int winner=0x7f060002;
+        public static final int super_mario_bros=0x7f060002;
+        public static final int winner=0x7f060003;
     }
     public static final class string {
         public static final int abc_action_bar_home_description=0x7f070000;

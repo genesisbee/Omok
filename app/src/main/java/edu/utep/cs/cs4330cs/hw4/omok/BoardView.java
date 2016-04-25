@@ -1,6 +1,7 @@
 package edu.utep.cs.cs4330cs.hw4.omok;
 
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
@@ -22,11 +23,9 @@ import java.util.List;
  * @{link edu.utep.cs.cs4330.hw2.BoardView.BoardTouchListener}.
  *
  * @author Yoonsik Cheon
- * @see edu.utep.cs.cs4330.hw2.BoardView.BoardTouchListener
+ * @see edu.utep.cs.cs4330.hw4.BoardView.BoardTouchListener
  */
 public class BoardView extends View {
-
-
     /** To listen to board touches. */
     public interface BoardTouchListener {
 
@@ -44,26 +43,27 @@ public class BoardView extends View {
      */
     private int boardSize = 10;
 
+
+
     //Genesis Additional code to change stone color
     private Color player1StoneColor;
     private Color player2StroneColor;
 
     /** Board background options */
     public int boardColor = Color.rgb(230, 138, 0);
-  //  public ImageView boardImage;
+    public boolean usingBitMap;
+    public Bitmap backgroundImage;
 
     /**Player custom options */
-    private Color playerOneColor;
-    private ImageView playerOneImage;
-
-    private Color playerTwoColor;
-    private ImageView playerTwoImage;
+    public Bitmap playerOneStone;
+    public Bitmap playerTwoStone;
 
     /** Last place touched. Just for testing! */
     private float lastX = -1;
     private float lastY = -1;
     // this is a place to store a copy of the board to be drawn
     private Place[][] places = new Place[boardSize][boardSize];
+
     // Method to initialize the places.
     private void initializePlace(){
         for(int x=0; x<places.length; x++){
@@ -94,17 +94,25 @@ public class BoardView extends View {
     /** Overridden here to draw a 2-D representation of an omok board. */
     @Override
     protected void onDraw(Canvas canvas) {
-
         super.onDraw(canvas);
-
         // draw a 2D grid
         final float maxIndex = maxIndex();
         final float lineGap = lineGap();
         final Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
+
         //set color
-        paint.setColor(boardColor);
+
         //draw board
-        canvas.drawRect(0, 0, maxIndex, maxIndex, paint);
+        //Theme was selected
+        if(usingBitMap){
+            canvas.drawBitmap(backgroundImage,0,0,paint);
+        }
+        //draw default board
+        else {
+            paint.setColor(boardColor);
+            canvas.drawRect(0, 0, maxIndex, maxIndex, paint);
+        }
+
         paint.setColor(Color.BLACK);
         for (int i = 0; i < numOfLines(); i++) {
             float index = i * lineGap;
@@ -121,14 +129,24 @@ public class BoardView extends View {
 
                 //If a white player found paint a white stone
                 if(places[x][y].getPlayer().equals("W")) {
-                    paint.setColor(Color.WHITE);
-                    canvas.drawCircle(lastX, lastY, r, paint);
+                    if(usingBitMap){
+                        canvas.drawBitmap(playerOneStone,lastX-(lineGap/2) ,lastY- (lineGap/2),paint);
+                    }
+                    else {
+                        paint.setColor(Color.WHITE);
+                        canvas.drawCircle(lastX, lastY, r, paint);
+                    }
                 }
 
                 //If a black player fount paint a black stone
                 if(places[x][y].getPlayer().equals("B")){
-                    paint.setColor(Color.BLACK);
-                    canvas.drawCircle(lastX, lastY, r, paint);
+                    if(usingBitMap){
+                        canvas.drawBitmap(playerTwoStone,lastX-(lineGap/2) ,lastY-(lineGap/2),paint);
+                    }
+                    else {
+                        paint.setColor(Color.BLACK);
+                        canvas.drawCircle(lastX, lastY, r, paint);
+                    }
                 }
 
                 //If a winner white player found paint the black inner circle
@@ -171,7 +189,7 @@ public class BoardView extends View {
      * a screen position touched. If the corresponding place is located,
      * all registered board touch listeners will be notified.
      *
-     * @see edu.utep.cs.cs4330.hw2.BoardView.BoardTouchListener
+     * @see edu.utep.cs.scs4330.hw2.BoardView.BoardTouchListener
      */
     @Override
     public boolean onTouchEvent(MotionEvent event) {
@@ -259,7 +277,7 @@ public class BoardView extends View {
                 Toast.LENGTH_SHORT).show();
     }
 
-    /*currentBoard copies the board from the model and call 	*invalidate new board
+    /*currentBoard copies the board from the model and call    *invalidate new board
      *@param Place[][] dots get the stones to be drawn*/
     public void currentBoard(Place[][] dots){
         for(int i=0; i<dots.length;i++){
@@ -270,3 +288,4 @@ public class BoardView extends View {
         invalidate();
     }
 }
+

@@ -1,11 +1,15 @@
 [
     {
+        "merged": "C:\\Users\\japyg\\AndroidStudioProjects\\Omok2\\app\\build\\intermediates\\res\\merged\\debug\\raw\\click.mp3",
+        "source": "C:\\Users\\japyg\\AndroidStudioProjects\\Omok2\\app\\src\\main\\res\\raw\\click.mp3"
+    },
+    {
         "merged": "C:\\Users\\japyg\\AndroidStudioProjects\\Omok2\\app\\build\\intermediates\\res\\merged\\debug\\raw\\lost.mp3",
         "source": "C:\\Users\\japyg\\AndroidStudioProjects\\Omok2\\app\\src\\main\\res\\raw\\lost.mp3"
     },
     {
-        "merged": "C:\\Users\\japyg\\AndroidStudioProjects\\Omok2\\app\\build\\intermediates\\res\\merged\\debug\\raw\\click.mp3",
-        "source": "C:\\Users\\japyg\\AndroidStudioProjects\\Omok2\\app\\src\\main\\res\\raw\\click.mp3"
+        "merged": "C:\\Users\\japyg\\AndroidStudioProjects\\Omok2\\app\\build\\intermediates\\res\\merged\\debug\\raw\\super_mario_bros.mp3",
+        "source": "C:\\Users\\japyg\\AndroidStudioProjects\\Omok2\\app\\src\\main\\res\\raw\\super_mario_bros.mp3"
     },
     {
         "merged": "C:\\Users\\japyg\\AndroidStudioProjects\\Omok2\\app\\build\\intermediates\\res\\merged\\debug\\raw\\winner.mp3",
