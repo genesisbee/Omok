@@ -78,7 +78,7 @@ public class HumanVsNetwork extends AbstractPlayerActivity{
         boardView.addBoardTouchListener(new BoardView.BoardTouchListener() {
             @Override
             public void onTouch(int x, int y) {
-                    String url_3= "http://www.cs.utep.edu/cheon/cs4330/project/omok/play/?pid="+p+"&move="+x+","+y+";";
+                    String url_3= "http://www.cs.utep.edu/cheon/cs4330/project/omok/play/?pid="+p+"&move="+x+","+y;
                     Log.d("URL_3",url_3);
                     PlayServer play = new PlayServer();
                     try {
