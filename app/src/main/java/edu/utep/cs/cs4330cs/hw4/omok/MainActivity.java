@@ -16,6 +16,8 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -25,7 +27,7 @@ import java.net.URL;
 import java.util.concurrent.ExecutionException;
 
 /** Test the BoardView class. */
-public class MainActivity extends AppCompatActivity implements Game_Mode_Fragment.GameModeListener {
+public class MainActivity extends AppCompatActivity implements Game_Mode_Fragment.GameModeListener, Network_Mode_Fragment.StrategyModeListener {
     //Declaring listeners to the UI components
     Button human;
     Button comp;
@@ -67,26 +69,30 @@ public class MainActivity extends AppCompatActivity implements Game_Mode_Fragmen
             network.setOnClickListener(new View.OnClickListener(){
                 @Override
                 public void onClick(View v){
-                    Intent c = new Intent();
-                    c = new Intent(getApplicationContext(),HumanVsNetwork.class);
-                    startActivity(c);
-
                     //Dynamically display GameMode fragment
                     FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
                     //Replace the contents of the container with the new fragment
                     ft.replace(R.id.placeholder, new Network_Mode_Fragment());
                     //Complete the changes added above
                     ft.commit();
-
                 }
             });
     }
 
-        //Called when user has selected a computer mode
+    //***********Fragement Listenter interfaces********************
+        //Called when user has selected a computer stragtegy
         public void setMode(int level) {
             Intent b = new Intent();
             b = new Intent(getApplicationContext(), HumanVsComputer.class);
             b.putExtra("mode", level);
             startActivity(b);
     }
+
+        //Called to select server strategy
+        public void setStrategy(int s) {
+            Intent c = new Intent();
+            c = new Intent(getApplicationContext(),HumanVsNetwork.class);
+            c.putExtra("strategy",s);
+            startActivity(c);
+        }
 }
