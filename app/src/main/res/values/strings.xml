@@ -9,6 +9,7 @@
     <string name="hard_mode">Smart</string>
     <string name="human_mode">Human</string>
     <string name="comp_mode">Computer</string>
+    <string name="network_mode">Network</string>
     <string name="menuTitle">OMOK</string>
 
     <!-- Menu option strings-->

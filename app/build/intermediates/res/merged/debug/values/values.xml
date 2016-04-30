@@ -291,6 +291,7 @@
     <string name="hard_mode">Smart</string>
     <string name="human_mode">Human</string>
     <string name="menuTitle">OMOK</string>
+    <string name="network_mode">Network</string>
     <string name="off">Off</string>
     <string name="on">On</string>
     <string name="quit">Exit Game</string>

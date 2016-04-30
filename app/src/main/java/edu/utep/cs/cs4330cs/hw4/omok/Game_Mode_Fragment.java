@@ -17,7 +17,7 @@ public class Game_Mode_Fragment extends Fragment {
     //Events Game_Mode_Fragment will need
     // to talk to MainActivity for.
     public interface GameModeListener{
-        void setMode(int level);
+        void setMode(int mode);
     }
 
     @Override

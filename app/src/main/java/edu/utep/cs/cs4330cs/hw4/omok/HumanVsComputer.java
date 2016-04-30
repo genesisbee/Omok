@@ -1,8 +1,5 @@
 package edu.utep.cs.cs4330cs.hw4.omok;
-import android.content.DialogInterface;
-import android.os.Build;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;

@@ -1,12 +1,14 @@
 package edu.utep.cs.cs4330cs.hw4.omok;
 
+import java.io.Serializable;
+
 /*Place class creates objects called Place. Places helps us
 *determind where or not a player has occupied an intersection on
 *the board by an other player. In additon Place class also keeps
 *track of the current player throught the game.
 *@authors Juan Razo and Genesis Bejarano
 **/
-public class Place {
+public class Place implements Serializable {
     private String player;
     private boolean taken;
 

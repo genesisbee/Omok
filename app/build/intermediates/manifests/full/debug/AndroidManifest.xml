@@ -8,6 +8,8 @@
         android:minSdkVersion="16"
         android:targetSdkVersion="23" />
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -35,6 +37,15 @@
 
         <activity
             android:name="edu.utep.cs.cs4330cs.hw4.omok.HumanVsComputer"
+            android:label="@string/app_name"
+            android:parentActivityName="edu.utep.cs.cs4330cs.hw4.omok.MainActivity" />
+
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value=".MainActivity" />
+
+        <activity
+            android:name="edu.utep.cs.cs4330cs.hw4.omok.HumanVsNetwork"
             android:label="@string/app_name"
             android:parentActivityName="edu.utep.cs.cs4330cs.hw4.omok.MainActivity" />
 

@@ -15,7 +15,7 @@ import android.util.Log;
 public class Board {
     final private int boardSize = 10;
     private Place[][] board = new Place[boardSize][boardSize];
-    private String playerTurn = "W"; //default player
+    public String playerTurn = "W"; //default player
     private boolean winner = false;
     private int blackScore = 0;
     private int whiteScore = 0;

@@ -6,14 +6,18 @@ import android.media.AudioAttributes;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.media.SoundPool;
+import android.os.AsyncTask;
 import android.os.Build;
+import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import java.util.concurrent.ExecutionException;
 
 public abstract class AbstractPlayerActivity extends AppCompatActivity {
     //game view UI components
@@ -89,7 +93,16 @@ public abstract class AbstractPlayerActivity extends AppCompatActivity {
     protected  void onPause(){
         super.onPause();
         mediaPlayer.release();
+
     }
+    @Override
+    protected  void onSaveInstanceState(Bundle outState){
+        super.onSaveInstanceState(outState);
+        outState.putSerializable("currentBoard", board.getPlace());
+        outState.putString("currentPlayer",board.getPlayerTurn());
+        outState.putBoolean("Theme_status",boardView.usingBitMap);
+    }
+
     //Menu code
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

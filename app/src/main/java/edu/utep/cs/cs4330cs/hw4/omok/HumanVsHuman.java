@@ -1,5 +1,6 @@
 package edu.utep.cs.cs4330cs.hw4.omok;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -9,12 +10,20 @@ public class HumanVsHuman extends AbstractPlayerActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        setbackgroundMusic();
+        setSoundEffects();
         //game UI components referenced
         currentPlayer = (TextView) findViewById(R.id.current_player);
         boardView = (BoardView) findViewById(R.id.boardView);
         resetButton = (Button) findViewById(R.id.reset);
-        setbackgroundMusic();
-        setSoundEffects();
+        if(savedInstanceState !=null){
+            Log.d("State is ", "not null");
+            board = (Board) savedInstanceState.getSerializable("currentBoard");
+            board.playerTurn = savedInstanceState.getString("currentPlayer");
+            boardView.usingBitMap = savedInstanceState.getBoolean("Theme_status");
+            Log.d("playerTurn ", board.playerTurn);
+            Log.d("Theme status", Boolean.toString(boardView.usingBitMap));
+        }
         startGame();
     }
 
