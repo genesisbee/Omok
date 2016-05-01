@@ -31,13 +31,13 @@ public class HumanVsComputer extends AbstractPlayerActivity {
                   //Check if a stone can be placed at the current X & Y touched
                   if (board.setStone(x, y, board.getPlayerTurn())) {
                       //Play set stone sound
-                        soundPool.play(clickID,1,1,1,0,2f);
+                      soundPool.play(clickID, 1, 1, 1, 0, 2f);
                       //Check if there is a winner at the last stone placed
                       if (board.winner(x, y, board.getPlayerTurn())) {
                           String winner = board.getPlayerName();
                           //play winner audio
-                          if(mediaPlayer.isPlaying())mediaPlayer.release();
-                          soundPool.play(winnerID,1,1,1,0,1f);
+                          if (mediaPlayer.isPlaying()) mediaPlayer.release();
+                          soundPool.play(winnerID, 1, 1, 1, 0, 1f);
                           // display the text for the winning player
                           Toast.makeText(getApplicationContext(), "Player " + winner +
                                   " has won!", Toast.LENGTH_LONG).show();
@@ -46,8 +46,8 @@ public class HumanVsComputer extends AbstractPlayerActivity {
                       //Check for a draw and display the message
                       else if (board.gameDraw()) {
                           //play lost audio
-                          if(mediaPlayer.isPlaying())mediaPlayer.release();
-                          soundPool.play(loserID,1,1,1,0,1f);
+                          if (mediaPlayer.isPlaying()) mediaPlayer.release();
+                          soundPool.play(loserID, 1, 1, 1, 0, 1f);
                           Toast.makeText(getApplicationContext(), "Draw",
                                   Toast.LENGTH_SHORT).show();
                       }
@@ -65,6 +65,7 @@ public class HumanVsComputer extends AbstractPlayerActivity {
           }
       });
   }
+
     //COMPUTER'S TURN
     public void computerMove(){
         //select a stone based on the computers strategy

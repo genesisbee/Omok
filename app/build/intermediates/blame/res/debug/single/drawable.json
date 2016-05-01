@@ -84,12 +84,12 @@
         "source": "C:\\Users\\japyg\\AndroidStudioProjects\\Omok2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\drawable\\abc_textfield_search_material.xml"
     },
     {
-        "merged": "C:\\Users\\japyg\\AndroidStudioProjects\\Omok2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ratingbar_small_material.xml",
-        "source": "C:\\Users\\japyg\\AndroidStudioProjects\\Omok2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\drawable\\abc_ratingbar_small_material.xml"
-    },
-    {
         "merged": "C:\\Users\\japyg\\AndroidStudioProjects\\Omok2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_seekbar_track_material.xml",
         "source": "C:\\Users\\japyg\\AndroidStudioProjects\\Omok2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\drawable\\abc_seekbar_track_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\japyg\\AndroidStudioProjects\\Omok2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ratingbar_small_material.xml",
+        "source": "C:\\Users\\japyg\\AndroidStudioProjects\\Omok2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\drawable\\abc_ratingbar_small_material.xml"
     },
     {
         "merged": "C:\\Users\\japyg\\AndroidStudioProjects\\Omok2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_tab_indicator_material.xml",
